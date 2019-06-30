@@ -23,7 +23,7 @@ namespace XFormsGraphAPI.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
 
-            App.IdentityClientApp.RedirectUri = "[INSERT YOUR REDIRECT URI HERE]";
+            App.IdentityClientApp.RedirectUri = "msal9aa5b306-d31c-4428-b495-f54383e771cc://auth";
             App.UiParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
         }
 

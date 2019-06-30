@@ -25,7 +25,7 @@ namespace XFormsGraphAPI.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-            App.IdentityClientApp.RedirectUri = "msal4d1098b8-ed15-438a-82e5-06ffbd7c85ea://auth";
+            App.IdentityClientApp.RedirectUri = "msal9aa5b306-d31c-4428-b495-f54383e771cc://auth";
             return base.FinishedLaunching(app, options);
         }
 

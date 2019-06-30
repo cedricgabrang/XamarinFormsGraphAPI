@@ -1,10 +1,8 @@
 ﻿using Microsoft.Graph;
 using Microsoft.Identity.Client;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace XFormsGraphAPI
@@ -20,30 +18,16 @@ namespace XFormsGraphAPI
         {
             if (graphClient == null)
             {
-                // Create Microsoft Graph client.
                 try
                 {
                     graphClient = new GraphServiceClient(
                         "https://graph.microsoft.com/v1.0",
                         new DelegateAuthenticationProvider(
-                            async (requestMessage) =>
-                            {
-                                var token = "";
-
-                                if (string.IsNullOrWhiteSpace(token))
-                                {
-                                    token = await GetTokenForUserAsync();
-                                }
-
-
+                        async (requestMessage) =>
+                        {
+                                var token = await GetTokenForUserAsync();
                                 requestMessage.Headers.Authorization = new AuthenticationHeaderValue("bearer", token);
-
-
-
-                                // This header has been added to identify our sample in the Microsoft Graph service.  If extracting this code for your project please remove.
-                                //requestMessage.Headers.Add("SampleID", "xamarin-csharp-connect-sample");
-
-                            }));
+                        }));
 
                     return graphClient;
                 }

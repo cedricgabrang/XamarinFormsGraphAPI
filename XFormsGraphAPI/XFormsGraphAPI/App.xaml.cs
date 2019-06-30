@@ -10,7 +10,7 @@ namespace XFormsGraphAPI
     {
 
         
-        public static string ClientID = "[INSERT YOUR APPLICATION ID]";
+        public static string ClientID = "9aa5b306-d31c-4428-b495-f54383e771cc";
         public static PublicClientApplication IdentityClientApp = null;
         public static string[] Scopes = { "User.Read", "User.ReadWrite", "User.ReadBasic.All" };
         public static UIParent UiParent = null;
@@ -19,7 +19,7 @@ namespace XFormsGraphAPI
         {
             InitializeComponent();
             IdentityClientApp = new PublicClientApplication(ClientID);
-            MainPage = new MainPage();
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()
